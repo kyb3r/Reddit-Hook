@@ -26,3 +26,7 @@ author_icon: https://i.imgur.com/coolauthicon
 ## Credits
 
 Credits to RainbowDinoaur for setting me on the right tracks. I relied on him for processing reddit information.
+
+### What it looks like:
+
+<img src='https://i.imgur.com/dE07Fov.png'>
