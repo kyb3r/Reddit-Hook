@@ -29,4 +29,4 @@ Credits to RainbowDinoaur for setting me on the right tracks. I relied on him fo
 
 ### What it looks like:
 
-<img src='https://i.imgur.com/dE07Fov.png'>
+<img src='https://i.imgur.com/0AStjT5.png'>
