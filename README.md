@@ -1,5 +1,7 @@
 # Reddit-Hook
 
+#### *Python script that posts webhook embeds of a subreddit's top posts.*
+
 ## Installation
 Just download the script and run reddit.py! The script is a infinite loop. Dont do anything to `discord_hooks.py` its a module that gets imported into reddit.py.
 
