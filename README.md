@@ -9,7 +9,7 @@ Reddit-Hook requires Python 3.5 and the Python Library "Requests". This will be 
 ## Using Reddit-Hook
 To start using, you will need to setup the config.ini file. The one provided looks like this:
 
-```ini
+```cfg
 [Required]
 url: https://discordapp.com/api/reallynicewebhookurl
 subreddit: brawlstars
