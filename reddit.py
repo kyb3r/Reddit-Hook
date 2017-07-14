@@ -49,8 +49,6 @@ def determine(data):
         return 3
 
 def get(sub):
-    # An loop here is needed because for some reason html.json()["data]["children"] fails for no reason sporadically
-    # Therefore if you loop it, it will eventually pass and return data.
     while True:
         try:
             html = requests.get("https://www.reddit.com/r/"+sub+"/top.json")
@@ -69,7 +67,7 @@ def makepost(data, footerimg, colour, thumbnail, author_icon):
         description = truncate(data["data"]["selftext"])
         imageurl = None
     elif det == 1:
-        description = data["data"]["url"]
+        description = '[View Image]({})'.format(data["data"]["url"])
         imageurl = data["data"]["preview"]["images"][0]["source"]["url"]
     elif det == 2:
         description = None
@@ -85,8 +83,10 @@ def makepost(data, footerimg, colour, thumbnail, author_icon):
     msg.set_author(name=data["data"]["title"], url="https://reddit.com"+data["data"]["permalink"], icon=author_icon)
     msg.set_title(title="/u/"+data["data"]["author"], url="https://www.reddit.com/u/" + data["data"]["author"])
     if description: msg.set_desc(description)
-    if imageurl: msg.set_image(imageurl)
-    msg.set_thumbnail(thumbnail)
+    if imageurl:
+        msg.set_thumbnail(imageurl)
+    else:       
+        msg.set_thumbnail(thumbnail)
     msg.set_footer(text="/r/"+data["data"]["subreddit"]+"  |  {} points and {} comments".format(score, comments),ts=ech,icon=footerimg)
     print(msg.json)
 
@@ -127,3 +127,5 @@ if __name__ == "__main__":
         print("Sleeping for 5 Minutes...")
         print("\n")
         sleep(300) # 5 Minutes in seconds
+
+
